@@ -19,14 +19,12 @@ int main()
 
         for(int i=1; i<n; i++)
         {
-            int j=2;
-            int tmp = a[i];
-            while(tmp <= a[i-1])
+            if(a[i] <= a[i-1])
             {
-                tmp = a[i];
-                tmp *= j++;
+                int j = a[i-1] / a[i];
+                j++;
+                a[i] *= j;
             }
-            a[i] = tmp;
         }
 
         cout<<a[n-1]<<"\n";
